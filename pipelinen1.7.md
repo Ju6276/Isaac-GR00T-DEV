@@ -1,5 +1,5 @@
-# GR00T N1.7 + RoboCasa GR1 Pipeline
-
+# GR00T N1.7 + RoboCasa GR1 Pipeline 
+# 依赖于dit4dit，部署robocasa环境参考dit4dit
 这份文档记录当前仓库如何把 **GR00T N1.7** 接到 **RoboCasa GR1 tabletop**：训练、24 任务 co-training、仿真评估、数据检查，以及每个代码改动的作用。
 
 当前分支建议：`robocasa`  
