@@ -68,6 +68,10 @@ EMBODIMENT_TAG_TO_PROJECTOR_INDEX = {
     "simpler_env_google": 0,
     "simpler_env_widowx": 1,
     "libero_sim": 2,
+    # HumanoidArena is a new post-training embodiment. Reuse the checkpoint's
+    # dedicated new-embodiment projector; the tag remains distinct for stats
+    # and modality routing.
+    "humanoidarena_g1_refpose_v3_1": 10,
     "new_embodiment": 10,
 }
 

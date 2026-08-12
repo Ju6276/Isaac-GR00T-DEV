@@ -115,6 +115,13 @@ class Gr00tPolicy(BasePolicy):
         self.processor: BaseProcessor = AutoProcessor.from_pretrained(processor_dir)
         self.processor.eval()
 
+        # Loading and dtype conversion can leave temporary CUDA blocks in
+        # PyTorch's caching allocator. Release those blocks before a simulator
+        # such as Isaac Lab initializes Warp/PhysX in a separate process on the
+        # same GPU. Live model tensors are unaffected.
+        if str(device).startswith("cuda") and torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
         # Store embodiment-specific configurations
         self.embodiment_tag = embodiment_tag
         all_modality_configs = self.processor.get_modality_configs()

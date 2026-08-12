@@ -41,6 +41,7 @@ class EmbodimentTag(Enum):
 
     Pre-registered posttrain tags (require finetuned checkpoint):
     - UNITREE_G1           -> "unitree_g1_full_body_with_waist_height_nav_cmd"
+    - HUMANOIDARENA_G1     -> "humanoidarena_g1_refpose_v3_1"
     - SIMPLER_ENV_GOOGLE   -> "simpler_env_google"
     - SIMPLER_ENV_WIDOWX   -> "simpler_env_widowx"
     - LIBERO_PANDA         -> "libero_sim"
@@ -100,6 +101,9 @@ class EmbodimentTag(Enum):
     """
     The Unitree G1 robot (sim, full-body with waist height and nav commands).
     """
+
+    HUMANOIDARENA_G1 = "humanoidarena_g1_refpose_v3_1"
+    """HumanoidArena G1 with the canonical 64D state and 40D reference-pose action."""
 
     SIMPLER_ENV_GOOGLE = "simpler_env_google"
     """
@@ -186,6 +190,7 @@ PRETRAIN_TAGS: frozenset[EmbodimentTag] = frozenset(
 POSTTRAIN_TAGS: frozenset[EmbodimentTag] = frozenset(
     {
         EmbodimentTag.UNITREE_G1,
+        EmbodimentTag.HUMANOIDARENA_G1,
         EmbodimentTag.SIMPLER_ENV_GOOGLE,
         EmbodimentTag.SIMPLER_ENV_WIDOWX,
         EmbodimentTag.LIBERO_PANDA,

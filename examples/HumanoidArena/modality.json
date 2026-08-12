@@ -1,0 +1,20 @@
+{
+    "state": {
+        "root_rot6d": {"start": 0, "end": 6},
+        "joint_pos": {"start": 6, "end": 35},
+        "joint_vel": {"start": 35, "end": 64}
+    },
+    "action": {
+        "root_xy_delta": {"start": 0, "end": 2},
+        "root_z": {"start": 2, "end": 3},
+        "root_rot6d": {"start": 3, "end": 9},
+        "joint_pos": {"start": 9, "end": 38},
+        "hand_binary": {"start": 38, "end": 40}
+    },
+    "video": {
+        "front": {"original_key": "observation.images.front"}
+    },
+    "annotation": {
+        "human.task_description": {"original_key": "task_index"}
+    }
+}
